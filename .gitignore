@@ -1,2 +1,6 @@
-# ignore all files in any directory named build
+# Touch Files
+######################
+CrashAutoSave.toe
+*.dmp
 Backup/
+*.[0-9].toe

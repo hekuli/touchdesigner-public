@@ -5,6 +5,7 @@ uniform int uPulseType;
 uniform float uPulseFreq;
 uniform bool uBurstMode;
 uniform bool uBurst;
+uniform bool uBurstPassThru;
 
 out vec4 fragColor;
 
@@ -23,6 +24,12 @@ float calcValue(int type, float t, float freq) {
 void main() {
   vec4 color = texture(sTD2DInputs[0], vUV.st);
   float fade;
+
+  if (uBurstMode && !uBurst && uBurstPassThru) {
+    fragColor = TDOutputSwizzle(color);
+    return;
+  }
+
   if (uBurstMode) {
     fade = float(uBurst);
   } else {

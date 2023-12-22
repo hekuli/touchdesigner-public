@@ -3,4 +3,4 @@
 CrashAutoSave.toe
 *.dmp
 Backup/
-*.[0-9].toe
+*.[0-9]*.toe
